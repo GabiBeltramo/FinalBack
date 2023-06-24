@@ -1,0 +1,165 @@
+html {
+    font-size: 14px;
+}
+
+@media (min-width: 768px) {
+    html {
+        font-size: 16px;
+    }
+}
+
+html {
+    position: relative;
+    min-height: 100%;
+}
+
+body {
+    margin-bottom: 60px;
+}
+
+#fondo {
+    background-color: #191B27;
+    width: 100%;
+    min-height: 90%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: absolute;
+    left: 0px;
+    right: 0px;
+    top: 50px;
+}
+
+#barra {
+    background-color: #191B27;
+    min-height: 10%;
+}
+
+#titulo {
+    color: #FC6B78;
+    font-size: 3em;
+    line-height: 1.5em;
+    font-weight: 700;
+}
+
+#texto {
+    color: #FC6B78;
+    font-size: 1em;
+    line-height: 1.5em;
+    font-weight: 500;
+}
+
+#texto2 {
+    color: #ffdf72;
+    font-size: 1em;
+    line-height: 1.5em;
+    font-weight: 200;
+}
+
+#texto3 {
+    color: #497DEF;
+    font-size: 0.9em;
+    line-height: 1.5em;
+    font-weight: 200;
+}
+
+#textoLight1 {
+    color: #497DEF;
+    font-size: 0.9em;
+    line-height: 1.5em;
+    font-weight: 100;
+}
+
+#textoLight2 {
+    color: #ffdf72;
+    font-size: 0.9em;
+    line-height: 1.5em;
+    font-weight: 100;
+}
+
+#textoLight3 {
+    color: #FC6B78;
+    font-size: 0.9em;
+    line-height: 1.5em;
+    font-weight: 100;
+}
+
+#titulo2 {
+    color: #77D98F;
+    font-size: 2em;
+    line-height: 1.5em;
+    font-weight: 700;
+}
+
+#titulo3 {
+    color: #497DEF;
+    font-size: 2em;
+    line-height: 1.5em;
+    font-weight: 700;
+}
+
+
+#botonR {
+    background-color: #77D98F;
+}
+
+#botonA {
+    background-color: #497DEF;
+}
+
+#link {
+    color: white;
+}
+
+    #link:hover {
+        color: #ffdf72;
+    }
+
+
+
+#nombre {
+    background: #191B27;
+    color: #ffdf72;
+    border: none;
+    border-bottom: 1px solid #ffdf72;
+    margin-left: 20px;
+}
+
+#correo {
+    background: #191B27;
+    color: #ffdf72;
+    border: none;
+    border-bottom: 1px solid #ffdf72;
+    margin-left: 20px;
+}
+
+#contra {
+    background: #191B27;
+    color: #ffdf72;
+    border: none;
+    border-bottom: 1px solid #ffdf72;
+    margin-left: 20px;
+}
+
+#iconColor {
+    filter: invert(98%) sepia(50%) saturate(1772%) hue-rotate(318deg) brightness(105%) contrast(103%);
+}
+
+html {
+    font-size: 14px;
+}
+
+@media (min-width: 768px) {
+    html {
+        font-size: 16px;
+    }
+}
+
+html {
+    position: relative;
+    min-height: 100%;
+}
+
+body {
+    margin-bottom: 60px;
+}

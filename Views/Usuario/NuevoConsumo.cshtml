@@ -1,0 +1,51 @@
+﻿@model Consumo;
+@{
+    ViewData["Title"] = "NuevoConsumo";
+}
+
+<body>
+    <div id="fondo" class="align-items-center">
+        <div id="titulo2" class="container-lg col-4 align-items-center">
+            <label id="texto">Agregá un nuevo consumo:</label>
+            <p id="textoLight3">(Sin culpa, que para algo trabajás)</p>
+            <div>
+
+                <div class="align-items-center">
+                    <form method="post" asp-action="NuevaEtiqueta" >
+                        <div class="align-items-center">
+
+                            <input asp-for="Monto" class="form-control" type="number" name="Monto" placeholder="Cuánto gastaste?" />
+                        </div>
+                        <div class="input-group align-items-center">
+                            <p id="textoLight1">Elegí la categoría a la que pertenece:</p>
+                            <select asp-for="IdEtiqueta" class="form-control" id="usuario">
+                                <option value="">Etiquetas</option>
+                                @foreach (var etiqueta in ViewBag.Etiquetas ?? new List<Etiqueta>())
+                                {
+                                    <option value="@etiqueta.Id">@etiqueta.Nombre</option>
+                                }
+                            </select>
+
+                        </div>
+                        <div class="align-items-center">
+                            <p id="textoLight2">Podés agregar una breve descripción que te ayude a reconocer el gasto en el futuro:</p>
+                            <textarea asp-for="Descripcion" class="form-control" id="Descripcion" type="text" name="Descripcion" value="" placeholder="Descripcion"></textarea>
+                        </div>
+
+                        <div>
+                            <p id="textoLight2">Seleccioná la fecha:</p>
+                            @Html.TextBoxFor(m => m.Fecha, new { @type="date", @class = "form-control datepicker" })
+                        </div>
+
+                        <div class="align-items-center">
+                            <button asp-action="NuevoConsumo" asp-controller="Usuario" type="button" class="btn btn-success">Guardar</button>
+                            <button asp-action="Perfil" asp-controller="Usuario" type="submit" class="btn btn-outline-light text-light">Volver al perfil</button>
+
+                        </div>
+                    </form>
+                </div>
+
+            </div>
+        </div>
+    </div>
+</body>

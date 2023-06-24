@@ -1,0 +1,66 @@
+﻿@model Usuario;
+@{
+    ViewData["Title"] = "Perfil";
+}
+
+<body>
+    <div id="fondo" class="align-items-center">
+        <div >
+            <h2 id="textoLight1">@ViewBag.Bienvenida</h2
+        ></div>
+        <div class="row container-lg col-4 align-items-center">
+            <label id="texto">Dinero disponible: @ViewBag.Fondo </label>
+            <p id="textoLight1">Ingresá la cantidad de dinero con la que contás en el mes:</p>
+            <form method="post" action="ModificarFondo">
+                
+                <input id="AgregarGasto" for="nuevoFondo" type="number"  name="nuevoFondo" />
+
+                <button class="btn btn-outline-light text-light"  type="submit">Guardar</button>
+            </form>
+        </div>
+
+        <div id="AgregarGasto" class="row container-lg col-4 align-items-center">
+            <form method="post">
+                <p id="texto">Podés clasificar tus gastos bajo diferentes etiquetas para poder llevar un mejor control de tu economía</p>
+                <p id="textoLight2">O podés hacer un seguimiento de todas las crisis que solucionaste comprando algo porque "me lo merezco", lo que más te sirva</p>
+                <button asp-action="NuevaEtiqueta" asp-controller="Usuario" class="btn btn-outline-light text-light">Agregar Etiqueta</button>
+            </form>
+        </div>
+       
+
+        <div id="AgregarGasto" class="row container-lg col-4 align-items-center">
+            <form method="post">
+                <p id="texto">Acá podés agregar todos los gastos que tengas</p>
+                <p id="textoLight1">Tratá de no olvidarte de ninguno, para que el registro sea lo más correcto posible</p>
+                <button asp-action="NuevoConsumo" asp-controller="Usuario" class="btn btn-outline-light text-light">Agregar Gasto</button>
+            </form>
+        </div>
+
+     </div>
+
+     <div>
+        <canvas id="myChart" width="400" height="400"></canvas>
+    </div>
+</body>
+
+<script>
+    document.addEventListener('DOMContentLoaded', function () {
+        var consumoData = {
+            labels: ['Etiqueta 1', 'Etiqueta 2', 'Etiqueta 3'], // Etiquetas del gráfico
+            datasets: [{
+                label: 'Consumos', // Etiqueta de la leyenda del gráfico
+                data: [20, 30, 15], // Datos de consumo correspondientes a cada etiqueta
+                backgroundColor: ['rgba(255, 99, 132, 0.5)', 'rgba(54, 162, 235, 0.5)', 'rgba(75, 192, 192, 0.5)'], // Colores de fondo para cada sección
+                borderColor: ['rgba(255, 99, 132, 1)', 'rgba(54, 162, 235, 1)', 'rgba(75, 192, 192, 1)'], // Colores de borde para cada sección
+                borderWidth: 1 // Ancho del borde
+            }]
+        };
+
+        var ctx = document.getElementById('consumoChart').getContext('2d');
+        var myChart = new Chart(ctx, {
+            type: 'pie', // Cambiado a gráfico circular
+            data: consumoData
+        });
+    });
+</script>
+

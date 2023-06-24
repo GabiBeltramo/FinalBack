@@ -1,0 +1,76 @@
+﻿@model Usuario
+@{
+    ViewData["Title"] = "Index";
+}
+<body>
+    <div id="fondo" class="row align-items-center ">
+        <div id="parte1" class="container-xl col-7 d-flex justify-content-center">
+            <div>
+                <h1 id="titulo">No nos va a ganar la pobreza</h1>
+                <div>
+                    <p id="texto" class="mt-4">Te ayudamos a administrar tu economía para que puedas seguir gastando, pero ordenadamente</p>
+                </div>
+
+            </div>
+        </div>
+        <div id="parte2" class=" container-xl col-5 d-flex ">
+            <<div class="alert alert-success" id="isValid" style="display:none;">
+                <strong>Registro Correcto</strong>
+            </div>
+            <div id="inputVacio" class="alert alert-danger " style="display:none">
+                <strong>Por favor complete todos los campos</strong>
+            </div>
+            <div id="mailInvalido" class="alert alert-danger " style="display:none">
+                <strong>Por favor ingrese una dirección de correo electrónico válido</strong>
+            </div>
+            <div class="container-xl ">
+                <h1 id="titulo2" style="text-align:center">Crear Cuenta</h1>
+                <div id="noLetras" class="alert alert-warning " style="display:none">
+                    <strong>Por favor, ingresar solo valores numéricos</strong>
+                </div>
+                <div id="inputVacio" class="alert alert-danger " style="display:none">
+                    <strong>Por favor complete todos los campos</strong>
+                </div>
+                <div id="mailInvalido" class="alert alert-danger " style="display:none">
+                    <strong>Por favor ingrese una dirección de correo electrónico válido</strong>
+                </div>
+                <form asp-action="Index" method="POST">
+                    <div class="input-group container-xl col-4 mb-3 mt-3">
+                        <img id="iconColor" src="/user-solid.svg" width="20px" /><input asp-for="Nombre" class="form-control" id="nombre" type="type" name="Nombre" value="" placeholder="Nombre" />
+                    </div>
+                    <div class="input-group container-xl col-4 mb-3 mt-3">
+                        <img id="iconColor" src="/envelope-solid.svg" width="20px" /><input asp-for="Correo" class="form-control" id="correo" type="type" name="Correo" value="" placeholder="Correo electrónico" />
+                    </div>
+                    <div class="input-group container-xl col-4 mb-3 mt-3">
+                        <img id="iconColor" src="/lock-solid.svg" width="20px" /><input asp-for="Password" class="form-control" id="contra" type="password" name="Password" value="" placeholder="Contraseña" />
+                    </div>
+
+                    <div class="container-xl col-4 mb-3 mt-3">
+                        <button asp-action="CrearPerfil" asp-controller="Usuario" id="botonR" type="submit" onclick="validarUsuario()" class="btn">Guardar</button>
+                    </div>
+                </form>
+                <div class="mb-3" style="text-align:center">
+                    <a asp-action="Login" asp-controller="Usuario" id="link" type="button">¿Ya tenés usuario? Ingresá</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+
+<script>onclick</script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+
+<script>
+
+    const validEmail = new RegExp('[a-z0-9]+[a-z]+\.[a-z]{2,3}');
+
+    function validarUsuario() {
+        document.querySelector('#mailInvalido').style.display = 'none'
+        let correo = document.querySelector('#correo').value
+        if (!validEmail.test(correo))
+            document.querySelector('#mailInvalido').style.display = "block"
+        else
+            return RedirectToAction(nameof(Perfil());
+    }
+
+</script>

@@ -1,0 +1,30 @@
+﻿@model Etiqueta;
+@{
+    ViewData["Title"] = "NuevaEtiqueta";
+}
+
+<body>
+    <div id="fondo" class="align-items-center">
+        <div id="titulo3" class="container-lg col-4 align-items-center">
+        <label id="CrearEtiqueta">Agregá una etiqueta nueva:</label>
+        <div>
+
+                <div class="align-items-center">
+                    <form method="post" asp-action="NuevaEtiqueta">
+                        <p id="textoLight2" >Elegí un nombre bajo el que puedas clasificar varios gastos y si querés, podés agregar una breve descripción para más detalle</p>
+                        <div class="form-group align-items-center">
+                            <input asp-for="Nombre" class="form-control" id="Nombre" type="text" name="Nombre" value="" placeholder="Nombre" />
+                            
+                        </div>
+                        <div class="form-group align-items-center">
+                            <textarea asp-for="Descripcion" class="form-control" id="Descripcion" type="text" name="Descripcion" value="" placeholder="Descripcion"></textarea>
+                         </div >
+                        <button asp-action="CrearEtiqueta" asp-controller="Usuario" id="botonR" type="submit" class="btn">Guardar</button>
+                        <button asp-action="Perfil" asp-controller="Usuario" type="submit" class="btn btn-outline-light text-light">Volver al perfil</button>
+                     </form>
+             </div>
+            
+        </div>
+    </div>
+    </div>
+</body>

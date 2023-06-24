@@ -1,0 +1,45 @@
+﻿@model Usuario
+@{
+    ViewData["Title"] = "Login";
+}
+<body>
+    <div id="fondo" class="row align-items-center ">
+        <div id="parte1" class="container-xl col-7 d-flex justify-content-center">
+            <div>
+                <h1 id="titulo">No nos va a ganar la pobreza</h1>
+                <div>
+                    <p id="texto" class="mt-4">Te ayudamos a administrar tu economía para que puedas seguir gastando, pero ordenadamente</p>
+                </div>
+
+            </div>
+        </div>
+        <div id="parte2" class=" container-xl col-5 d-flex ">
+            <div class="container-xl ">
+                <h1 id="titulo3" style="text-align:center">Ingresar</h1>
+
+                <div id="mailInvalido" class="alert alert-danger " style="display:none">
+                    <strong>Por favor ingrese una dirección de correo electrónico válido</strong>
+                </div>
+                <form method="POST">
+
+                    <div class="input-group container-xl col-4 mb-3 mt-3">
+                        <img id="iconColor" src="/envelope-solid.svg" width="20px" /><input asp-for="Correo" class="form-control" id="correo" type="type" name="Correo" value="" placeholder="Correo electrónico" />
+                    </div>
+                    <div class="input-group container-xl col-4 mb-3 mt-3">
+                        <img id="iconColor" src="/lock-solid.svg" width="20px" /><input asp-for="Password" class="form-control" id="contra" type="password" name="Password" value="" placeholder="Contraseña" />
+                    </div>
+
+                    <div class="container-xl col-4 mb-3 mt-3">
+                        <a asp-action="Perfil" asp-controller="Usuario" id="botonA" type="submit" onclick="validarUsuario()" class="btn">Entrar</a>
+                    </div>
+                </form>
+                <div class="mb-3" style="text-align:center">
+                    <a asp-action="Index" asp-controller="Home" id="link" type="button">¿Primera vez aquí? Creá tu cuenta</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+
+
+<script src="~/js/Login.js"></script>
